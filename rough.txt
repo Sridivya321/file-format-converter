@@ -1,0 +1,111 @@
+PS C:\Users\Sridivya\projects\file-format-converter> & c:/Users/Sridivya/projects/file-format-converter/ffc-venv/Scripts/Activate.ps1
+(ffc-venv) PS C:\Users\Sridivya\projects\file-format-converter> pip install -r. \requiremnets.txt
+ERROR: Invalid requirement: '\\requiremnets.txt'
+Hint: It looks like a path. File '\requiremnets.txt' does not exist.
+
+[notice] A new release of pip is available: 23.1.2 -> 23.2.1
+[notice] To update, run: python.exe -m pip install --upgrade pip
+(ffc-venv) PS C:\Users\Sridivya\projects\file-format-converter> pip install -r. \requirements.txt
+ERROR: Invalid requirement: '\\requirements.txt'
+Hint: It looks like a path. File '\requirements.txt' does not exist.
+
+[notice] A new release of pip is available: 23.1.2 -> 23.2.1
+[notice] To update, run: python.exe -m pip install --upgrade pip
+(ffc-venv) PS C:\Users\Sridivya\projects\file-format-converter> pip install -r. \requirements.txt
+ERROR: Invalid requirement: '\\requirements.txt'
+Hint: It looks like a path. File '\requirements.txt' does not exist.
+
+[notice] A new release of pip is available: 23.1.2 -> 23.2.1
+[notice] To update, run: python.exe -m pip install --upgrade pip
+(ffc-venv) PS C:\Users\Sridivya\projects\file-format-converter> pip install --upgrade pip
+Requirement already satisfied: pip in c:\users\sridivya\projects\file-format-converter\ffc-venv\lib\site-packages (23.1.2)
+Collecting pip
+  Using cached pip-23.2.1-py3-none-any.whl (2.1 MB)
+ERROR: To modify pip, please run the following command:
+C:\Users\Sridivya\projects\file-format-converter\ffc-venv\Scripts\python.exe -m pip install --upgrade pip      
+
+[notice] A new release of pip is available: 23.1.2 -> 23.2.1
+[notice] To update, run: python.exe -m pip install --upgrade pip
+(ffc-venv) PS C:\Users\Sridivya\projects\file-format-converter> pip install -r. \requirements.txt
+ERROR: Invalid requirement: '\\requirements.txt'
+Hint: It looks like a path. File '\requirements.txt' does not exist.
+
+[notice] A new release of pip is available: 23.1.2 -> 23.2.1
+[notice] To update, run: python.exe -m pip install --upgrade pip
+(ffc-venv) PS C:\Users\Sridivya\projects\file-format-converter> pip install -r.\requirements.txt 
+Collecting pandas<=1.5.10 (from -r .\requirements.txt (line 1))
+  Downloading pandas-1.5.3-cp311-cp311-win_amd64.whl (10.3 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.3/10.3 MB 302.6 kB/s eta 0:00:00
+Collecting python-dateutil>=2.8.1 (from pandas<=1.5.10->-r .\requirements.txt (line 1))
+  Using cached python_dateutil-2.8.2-py2.py3-none-any.whl (247 kB)
+Collecting pytz>=2020.1 (from pandas<=1.5.10->-r .\requirements.txt (line 1))
+  Using cached pytz-2023.3-py2.py3-none-any.whl (502 kB)
+Collecting numpy>=1.21.0 (from pandas<=1.5.10->-r .\requirements.txt (line 1))
+  Downloading numpy-1.25.2-cp311-cp311-win_amd64.whl (15.5 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 15.5/15.5 MB 1.1 MB/s eta 0:00:00
+Collecting six>=1.5 (from python-dateutil>=2.8.1->pandas<=1.5.10->-r .\requirements.txt (line 1))
+  Using cached six-1.16.0-py2.py3-none-any.whl (11 kB)
+Installing collected packages: pytz, six, numpy, python-dateutil, pandas
+Successfully installed numpy-1.25.2 pandas-1.5.3 python-dateutil-2.8.2 pytz-2023.3 six-1.16.0
+
+[notice] A new release of pip is available: 23.1.2 -> 23.2.1
+[notice] To update, run: python.exe -m pip install --upgrade pip
+(ffc-venv) PS C:\Users\Sridivya\projects\file-format-converter> git init
+Initialized empty Git repository in C:/Users/Sridivya/projects/file-format-converter/.git/
+(ffc-venv) PS C:\Users\Sridivya\projects\file-format-converter> git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .gitignore
+        requirements.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+(ffc-venv) PS C:\Users\Sridivya\projects\file-format-converter> git add .
+(ffc-venv) PS C:\Users\Sridivya\projects\file-format-converter> git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   .gitignore
+        new file:   requirements.txt
+
+(ffc-venv) PS C:\Users\Sridivya\projects\file-format-converter> git commit -m "Initial commit"
+Author identity unknown
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'Sridivya@ILS0436.(none)')
+(ffc-venv) PS C:\Users\Sridivya\projects\file-format-converter> git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   .gitignore
+        new file:   requirements.txt
+
+(ffc-venv) PS C:\Users\Sridivya\projects\file-format-converter> git remote add origin https://github.com/Sridivya321/file-format-converter.git
+(ffc-venv) PS C:\Users\Sridivya\projects\file-format-converter> git branch -M main
+(ffc-venv) PS C:\Users\Sridivya\projects\file-format-converter> git status
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   .gitignore
+        new file:   requirements.txt

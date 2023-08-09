@@ -16,6 +16,7 @@ import os
 import glob
 import pandas as pd
 import uuid
+import logging
 
 def get_columns(ds):
     #creating the environment variable for the path schemas
@@ -30,20 +31,30 @@ def get_columns(ds):
         columns=[i['column_name'] for i in cols]
         return print(columns)
     except KeyError:
-        print(f'schema is not found for {ds}')
-        return
+        logging.error(f'schema is not found for {ds}')
+        # return
+        raise
     
 
 def process_file(src_base_dir,ds,tgt_base_dir):
     for file in glob.glob(f'{src_base_dir}/{ds}/part*'):
-        df=pd.read_csv(file,names=get_columns(ds))
-        os.makedirs(f'{tgt_base_dir}/{ds}',exist_ok=True)
-        df.to_json(f'{tgt_base_dir}/{ds}/part-{str(uuid.uuid1())}.json',
-                           orient='records',
-                           lines=True)
-        print(f'n.of records processed for {os.path.split(file)[1]} fro {ds} is {df.shape}')
+        try:
+            df=pd.read_csv(file,names=get_columns(ds))
+            os.makedirs(f'{tgt_base_dir}/{ds}',exist_ok=True)
+            df.to_json(f'{tgt_base_dir}/{ds}/part-{str(uuid.uuid1())}.json',
+                            orient='records',
+                            lines=True)
+            logging.info(f'n.of records processed for {os.path.split(file)[1]} fro {ds} is {df.shape}')
+        except KeyError:
+            raise
     
 def main():
+    logging.basicConfig(
+        level=logging.INFO,
+        filename='logs/ffc8.log',
+        format='%(asctime)s %(levelname)s %(message)s',
+        datefmt='DATE --> %Y-%B-%d time -->%H:%M:%S --> %p'
+    )
     src_base_dir=os.environ['SRC_BASE_DIR']
     tgt_base_dir=os.environ['TGT_BASE_DIR']
 
@@ -56,9 +67,15 @@ def main():
     else:
          dirs=datasets.split(',')
          for dis in dirs:
-              process_file(src_base_dir,dis,tgt_base_dir)
+            try:
+                process_file(src_base_dir,dis,tgt_base_dir)
+            except Exception as e:
+                logging.error(f'file format conversion in Failed')
+    logging.info('file format conversion : Successful')
             
 
 
 if __name__=="__main__":
     main()
+
+

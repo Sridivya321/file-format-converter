@@ -1,3 +1,10 @@
 2023/August/08 time 02:12:46 PM INFO writing the log message into file using filename as a parameter
 2023/August/08 time 02:13:35 PM ERROR this is a error log
 2023/August/08 time 02:14:02 PM CRITICAL this is the critical log, and it is the last level
+DATE --> 2023-August-10 time -->12:02:31 --> PM INFO n.of records processed for part-00000 fro categories is (57, 3)
+DATE --> 2023-August-10 time -->12:02:31 --> PM INFO n.of records processed for part-00000 fro customers is (12434, 9)
+DATE --> 2023-August-10 time -->12:02:31 --> PM INFO n.of records processed for part-00000 fro departments is (5, 2)
+DATE --> 2023-August-10 time -->12:02:31 --> PM INFO n.of records processed for part-00000 fro orders is (68882, 4)
+DATE --> 2023-August-10 time -->12:02:31 --> PM INFO n.of records processed for part-00000 fro order_items is (172197, 6)
+DATE --> 2023-August-10 time -->12:02:31 --> PM INFO n.of records processed for part-00000 fro products is (1344, 6)
+DATE --> 2023-August-10 time -->12:02:31 --> PM INFO file format conversion : Successful

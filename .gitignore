@@ -4,3 +4,6 @@ data
 dummy.py
 logs
 logging.ipynb
+build
+dist
+ffconverter.egg-info

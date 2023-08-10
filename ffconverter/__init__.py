@@ -49,14 +49,16 @@ def process_file(src_base_dir,ds,tgt_base_dir):
             raise
     
 def main():
+    src_base_dir=os.environ['SRC_BASE_DIR']
+    tgt_base_dir=os.environ['TGT_BASE_DIR']
+    log_file_path=os.environ['LOG_FILE_PATH']
+
     logging.basicConfig(
         level=logging.INFO,
-        filename='logs/ffc8.log',
+        filename=log_file_path,
         format='%(asctime)s %(levelname)s %(message)s',
         datefmt='DATE --> %Y-%B-%d time -->%H:%M:%S --> %p'
     )
-    src_base_dir=os.environ['SRC_BASE_DIR']
-    tgt_base_dir=os.environ['TGT_BASE_DIR']
 
     #new variable
     datasets=os.environ.get('DATASETS')
